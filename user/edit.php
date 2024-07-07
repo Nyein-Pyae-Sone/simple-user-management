@@ -1,9 +1,9 @@
 <?php 
 require '../init.php' ;
+ensureLoggedIn();
 
 $role = getAll("SELECT * FROM  roles");
 $gender = getAll("SELECT DISTINCT gender FROM users");
-
 if(isset($_GET['id']) && !empty($_GET['id'])){
     $id = $_GET['id'];
     $user = getOne("select * from users where id=$id");

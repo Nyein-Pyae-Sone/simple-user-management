@@ -1,12 +1,12 @@
 <?php 
 require '../init.php' ;
-
+ensureLoggedIn();
 //delete
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['_method']) && $_POST['_method'] === 'DELETE') { 
   $id = $_POST['id']; 
-  query("DELETE FROM users WHERE id=?", [$id]); 
-  
+  query("DELETE FROM users WHERE id=?", [$id]);
 }
+
 $users = getAll(' SELECT users.id, users.name, users.username, users.email,users.gender, roles.name as role_name FROM users JOIN roles ON users.role_id = roles.id ');
 
 require '../include/head.php';

@@ -1,5 +1,7 @@
 <?php 
 require '../init.php' ;
+ensureLoggedIn();
+
 $features = getAll("SELECT * FROM features");
 $permissions = getAll("SELECT * FROM permissions");
 

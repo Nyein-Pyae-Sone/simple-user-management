@@ -53,11 +53,14 @@ function go($path)
     header("Location:$path");
 }
 
-function slug($str){
-    return uniqid(). '-' . str_replace(' ','-',$str);
+// In init.php or a similar common file
+function ensureLoggedIn() {
+    if (!isset($_SESSION['user'])) {
+        setError('Please login first');
+        go('/login.php');
+        exit(); // Make sure to exit after the redirect to stop further script execution
+    }
 }
-
-
 
 function dd($vaule)
 {

@@ -7,8 +7,8 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
 
+        <?php if(isset($_SESSION['user'])) : ?>
             <li class="nav-item">
-
                 <a class="nav-link" href="<?= $root; ?>user/index.php"><i class="fas fa-users mr-2"></i>User lists </span></a>
             </li>
             <li class="nav-item">
@@ -20,20 +20,13 @@
             </li>
           
           <li class="nav-item">
-
-            <a class="nav-link" href="/"><i class="fab fa-500px mr-2"></i>Profile <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?= $root;?>logout.php"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
-          </li>
-        
-            <li class="nav-item">
-              <a class="nav-link" href="/"><i class="fas fa-user-plus mr-2"></i>Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
-            </li>
+          <?php endif; ?>
+
+         
+      
 
 
         </ul>

@@ -1,6 +1,6 @@
 <?php 
 require '../init.php';
-
+ensureLoggedIn();
 // Fetch all roles
 $roles = getAll('SELECT * FROM roles');
 
